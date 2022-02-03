@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 
@@ -6,24 +7,35 @@ export default class Login extends Component {
   state = {
     inputName: '',
     loading: false,
+    hasLoanding: false,
   }
 
   handleInput = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   }
 
-  handleClick = (value) => {
+  handleClick = async (value) => {
+    const {loading} = this.state;
+    const  {history} = this.props;
     const dataName = {
       name: value,
     };
     this.setState({
       loading: true,
-    }, () => createUser(dataName));
+    });
+    await createUser(dataName);
+    history.push('/search');
+  }
+  
+  componentWillUnmount() {
+    this.setState({
+      loading: false,
+    })
   }
 
   render() {
     const MIN_LETTERS = 3;
-    const { inputName, loading } = this.state;
+    const { inputName, loading, hasLoanding } = this.state;
 
     return (
       <div data-testid="page-login">
@@ -49,6 +61,7 @@ export default class Login extends Component {
                 Entrar
               </button>
             </div>)}
+          {/* { hasLoanding && <Redirect to="/search" /> } */}
       </div>);
   }
 }
