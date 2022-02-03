@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { string } from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 
@@ -7,7 +7,12 @@ export default class Login extends Component {
   state = {
     inputName: '',
     loading: false,
-    hasLoanding: false,
+  }
+
+  componentWillUnmount() {
+    this.setState({
+      loading: false,
+    });
   }
 
   handleInput = ({ target: { name, value } }) => {
@@ -15,8 +20,7 @@ export default class Login extends Component {
   }
 
   handleClick = async (value) => {
-    const {loading} = this.state;
-    const  {history} = this.props;
+    const { history } = this.props;
     const dataName = {
       name: value,
     };
@@ -26,16 +30,10 @@ export default class Login extends Component {
     await createUser(dataName);
     history.push('/search');
   }
-  
-  componentWillUnmount() {
-    this.setState({
-      loading: false,
-    })
-  }
 
   render() {
     const MIN_LETTERS = 3;
-    const { inputName, loading, hasLoanding } = this.state;
+    const { inputName, loading } = this.state;
 
     return (
       <div data-testid="page-login">
@@ -61,7 +59,10 @@ export default class Login extends Component {
                 Entrar
               </button>
             </div>)}
-          {/* { hasLoanding && <Redirect to="/search" /> } */}
       </div>);
   }
 }
+
+Login.propTypes = {
+  history: string.isRequired,
+};
