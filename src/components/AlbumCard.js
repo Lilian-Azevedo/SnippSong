@@ -18,12 +18,12 @@ export default class AlbumCard extends React.Component {
         <section className="card">
           <div className="area-intern">
             <img
-              className="photoPerson"
+              className="photoAlbum"
               src={ artworkUrl100 }
               alt={ artistName }
             />
-            <h2>{artistName}</h2>
-            <p>{collectionName}</p>
+            <h2>{collectionName}</h2>
+            <h4>{artistName}</h4>
           </div>
         </section>
       </Link>

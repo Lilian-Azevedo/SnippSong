@@ -10,7 +10,7 @@ import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 
 class App extends React.Component {
-  /* state = {
+  /*  state = {
     searchId: '',
   }
 
