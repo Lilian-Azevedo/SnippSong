@@ -45,8 +45,7 @@ export default class Search extends Component {
     return (
       <div>
         <h1>
-          Resultado de álbuns de:
-          {searchAlbum}
+          Resultado de álbuns de: {searchAlbum}
         </h1>
         <div>
           { albums.map((album) => (
