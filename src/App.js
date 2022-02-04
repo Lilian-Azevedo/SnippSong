@@ -14,9 +14,9 @@ class App extends React.Component {
     searchId: '',
   }
 
-  handleSearch = (inputNameAlbum) => {
+  handleSearch = (input) => {
     this.setState({
-      searchId: inputNameAlbum,
+      searchId: ,
     });
   } */
 
