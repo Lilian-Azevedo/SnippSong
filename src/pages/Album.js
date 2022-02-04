@@ -25,12 +25,12 @@ export default class Album extends Component {
     }
   }
 
-  getFavoritesFromLocal = () => {
-    // const { musicsFavorites } = this.state;
-    const response = getFavoriteSongs();
+  getFavoritesFromLocal = async () => {
+    const response = await getFavoriteSongs();
     if (response) {
       this.setState({
         loading: false,
+        musicsFavorites: [...response],
       });
     }
   }
@@ -42,6 +42,7 @@ export default class Album extends Component {
     });
 
     const musicFound = musics.find((music) => music.trackId === Number(target.id));
+
     this.setState(({ musicsFavorites }) => (
       { musicsFavorites: [...musicsFavorites, musicFound] }
     ));
