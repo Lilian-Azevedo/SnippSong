@@ -10,18 +10,31 @@ import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 
 class App extends React.Component {
+  /* state = {
+    searchId: '',
+  }
+
+  handleSearch = (inputNameAlbum) => {
+    this.setState({
+      searchId: inputNameAlbum,
+    });
+  } */
+
   render() {
     return (
       <div>
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={ Login } />
-            <Route path="/search" render={ () => <Search /> } />
-            <Route path="/album/:id" render={ () => <Album /> } />
-            <Route path="/favorites" render={ () => <Favorites /> } />
-            <Route exact path="/profile" render={ () => <Profile /> } />
-            <Route exact path="/profile/edit" render={ () => <ProfileEdit /> } />
-            <Route path="*" render={ () => <NotFound /> } />
+            <Route
+              path="/search"
+              render={ () => <Search handleSearch={ this.handleSearch } /> }
+            />
+            <Route path="/album/:id" render={ (props) => <Album { ...props } /> } />
+            <Route path="/favorites" component={ Favorites } />
+            <Route exact path="/profile" component={ Profile } />
+            <Route exact path="/profile/edit" component={ ProfileEdit } />
+            <Route path="*" component={ NotFound } />
           </Switch>
         </BrowserRouter>
       </div>);
