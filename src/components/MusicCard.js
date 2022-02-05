@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, number, func, bool } from 'prop-types';
+import { string, func, bool } from 'prop-types';
 
 export default class MusicCard extends React.Component {
   render() {
@@ -41,6 +41,6 @@ MusicCard.propTypes = {
   trackName: string.isRequired,
   previewUrl: string.isRequired,
   favorite: bool.isRequired,
-  trackId: number.isRequired,
+  trackId: string.isRequired,
   onHandleFavorite: func.isRequired,
 };

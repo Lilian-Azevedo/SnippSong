@@ -44,11 +44,6 @@ export default class Album extends Component {
     if (response) {
       this.getFavoritesFromLocal();
     }
-    /* this.setState({ loading: true }, () => {
-      if(response) {
-        this.getFavoritesFromLocal();
-      }
-    }) */
   }
 
   isFavorite = (id) => {
