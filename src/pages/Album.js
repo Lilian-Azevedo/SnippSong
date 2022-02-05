@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Loading from './Loading';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 export default class Album extends Component {
   state = { musics: [], infoArtist: [], loading: false, musicsFavorites: [] };
@@ -29,29 +29,26 @@ export default class Album extends Component {
     const response = await getFavoriteSongs();
     if (response) {
       this.setState({
+        musicsFavorites: response,
         loading: false,
-        musicsFavorites: [...response],
       });
     }
   }
 
   inputFavorite = async ({ target }) => {
     const { musics } = this.state;
-    this.setState({
-      loading: true,
-    });
-
-    const musicFound = musics.find((music) => music.trackId === Number(target.id));
-
-    this.setState(({ musicsFavorites }) => (
-      { musicsFavorites: [...musicsFavorites, musicFound] }
-    ));
-    const response = await addSong(musicFound);
+    const { id, checked } = target;
+    this.setState({ loading: true });
+    const musicFound = musics.find((music) => music.trackId === Number(id));
+    const response = checked ? await addSong(musicFound) : await removeSong(musicFound);
     if (response) {
-      this.setState({
-        loading: false,
-      });
+      this.getFavoritesFromLocal();
     }
+    /* this.setState({ loading: true }, () => {
+      if(response) {
+        this.getFavoritesFromLocal();
+      }
+    }) */
   }
 
   isFavorite = (id) => {
