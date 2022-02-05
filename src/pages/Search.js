@@ -53,7 +53,6 @@ export default class Search extends Component {
       </div>);
   }
 
-  // <Redirect to={`/album/${searchAlbum}`} />
   render() {
     const MIN_LETTERS = 2;
     const { inputName, loading, hasAlbums } = this.state;

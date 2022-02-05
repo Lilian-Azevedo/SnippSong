@@ -10,16 +10,6 @@ import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 
 class App extends React.Component {
-  /*  state = {
-    searchId: '',
-  }
-
-  handleSearch = (input) => {
-    this.setState({
-      searchId: ,
-    });
-  } */
-
   render() {
     return (
       <div>
@@ -28,7 +18,7 @@ class App extends React.Component {
             <Route exact path="/" component={ Login } />
             <Route
               path="/search"
-              render={ () => <Search handleSearch={ this.handleSearch } /> }
+              component={ Search }
             />
             <Route path="/album/:id" render={ (props) => <Album { ...props } /> } />
             <Route path="/favorites" component={ Favorites } />
