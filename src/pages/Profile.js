@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Loading from './Loading';
 import { getUser } from '../services/userAPI';
-import { Link } from 'react-router-dom';
 
 export default class Profile extends Component {
   state = { loading: true, userInfo: '' }
+
   componentDidMount() {
     this.getProfileData();
   }
@@ -26,19 +27,19 @@ export default class Profile extends Component {
       <div data-testid="page-profile">
         <Header />
         {
-          loading 
-          ? <Loading />
-          : (
-          <div>
-            <img data-testid="profile-image" src={image} alt='Foto do usuário' />
-            <h3>{name}</h3>
-            <h4>{email}</h4>
-            <p>{description}</p>
-            <Link to='/profile/edit'>
-              <button type='button'>Editar perfil</button>
-            </Link>
-          </div>)
-        } 
+          loading
+            ? <Loading />
+            : (
+              <div>
+                <img data-testid="profile-image" src={ image } alt="Foto do usuário" />
+                <h3>{name}</h3>
+                <h4>{email}</h4>
+                <p>{description}</p>
+                <Link to="/profile/edit">
+                  <button type="button">Editar perfil</button>
+                </Link>
+              </div>)
+        }
       </div>);
   }
 }
