@@ -62,26 +62,28 @@ export default class Album extends Component {
         { loading
           ? <Loading />
           : (
-            <div>
-              <div>
+            <section>
+              <div className='container-photo-album'>
                 <img
-                  className="photoAlbum"
+                  className="photoAlbum"s
                   src={ artworkUrl100 }
                   alt={ artistName }
                 />
                 <h2 data-testid="album-name">{collectionName}</h2>
                 <h4 data-testid="artist-name">{artistName}</h4>
               </div>
-              { musics.map((music) => music.trackId
-            && (
-              <div key={ Math.random() } id={ music.trackId }>
-                <MusicCard
-                  { ...music }
-                  onHandleFavorite={ this.inputFavorite }
-                  favorite={ this.isFavorite(music.trackId) }
-                />
-              </div>))}
-            </div>)}
+              <div className='music-list'>
+                { musics.map((music) => music.trackId
+              && (
+                <div key={ Math.random() } id={ music.trackId }>
+                  <MusicCard
+                    { ...music }
+                    onHandleFavorite={ this.inputFavorite }
+                    favorite={ this.isFavorite(music.trackId) }
+                  />
+                </div>))}
+              </div>
+            </section>)}
       </div>);
   }
 }

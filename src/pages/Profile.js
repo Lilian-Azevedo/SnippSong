@@ -31,7 +31,14 @@ export default class Profile extends Component {
             ? <Loading />
             : (
               <div>
-                <img data-testid="profile-image" src={ image } alt="Foto do usuário" />
+                { image 
+                ? <img data-testid="profile-image" src='https://static.thenounproject.com/png/1380525-200.png'
+                alt="Foto do usuário"
+                />
+                : <img data-testid="profile-image" src='https://static.thenounproject.com/png/1380525-200.png'
+                  alt="Foto do usuário"
+                  />
+              }
                 <h3>{name}</h3>
                 <h4>{email}</h4>
                 <p>{description}</p>

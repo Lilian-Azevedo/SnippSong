@@ -34,6 +34,11 @@ export default class Search extends Component {
     }
   }
 
+  handleEnterClick = (event) => {
+    const { inputName } = this.state;
+    event.key === 'Enter' && this.handleClick(inputName);
+  }
+
   albumsFounded = () => {
     const { searchAlbum, albums } = this.state;
     if (!albums.length) return (<NotFound />);
@@ -67,10 +72,11 @@ export default class Search extends Component {
               <input autoComplete='off'
                 data-testid="search-artist-input"
                 type="text"
-                onChange={ this.handleInput }
                 placeholder="Nome do artista"
                 value={ inputName }
                 name="inputName"
+                onChange={ this.handleInput }
+                onKeyDown={ this.handleEnterClick }
               />
               <button
                 type="button"

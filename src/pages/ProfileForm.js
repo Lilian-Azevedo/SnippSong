@@ -10,6 +10,7 @@ export default class ProfileForm extends Component {
         <label htmlFor="image">
           Imagem:
           <input
+            autoComplete='off'
             name="image"
             type="text"
             data-testid="edit-input-image"
@@ -18,10 +19,10 @@ export default class ProfileForm extends Component {
             onChange={ onInputChange }
           />
         </label>
-        <br />
         <label htmlFor="name">
           Nome:
           <input
+            autoComplete='off'
             name="name"
             type="text"
             data-testid="edit-input-name"
@@ -30,7 +31,6 @@ export default class ProfileForm extends Component {
             onChange={ onInputChange }
           />
         </label>
-        <br />
         <label htmlFor="email">
           Email:
           <input
@@ -40,9 +40,10 @@ export default class ProfileForm extends Component {
             id="email"
             value={ email }
             onChange={ onInputChange }
+            autoComplete='off'
           />
         </label>
-        <br />
+   
         <label htmlFor="description">
           Descrição:
           <textarea
@@ -51,9 +52,10 @@ export default class ProfileForm extends Component {
             id="description"
             value={ description }
             onChange={ onInputChange }
+            autoComplete='off'
           />
         </label>
-        <br />
+   
         <button
           name="isSaveButtonDisabled"
           data-testid="edit-button-save"
