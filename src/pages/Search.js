@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Loading from './Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import AlbumCard from '../components/AlbumCard';
-import NotFound from './NotFound';
+import NotFoundAlbum from './NotFoundAlbum';
 
 const INICIAL_DATA = { inputName: '' };
 
@@ -41,7 +41,7 @@ export default class Search extends Component {
 
   albumsFounded = () => {
     const { searchAlbum, albums } = this.state;
-    if (!albums.length) return (<NotFound />);
+    if (!albums.length) return (<NotFoundAlbum />);
     return (
       <div className="container-albums">
         <h1>

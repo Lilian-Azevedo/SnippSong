@@ -24,7 +24,7 @@ code {
   align-items: center;
   height: 100vh;
   background-size: cover;
-  background-image: url('./music-melody-abstract_1575661251.jpg');
+  background-image: linear-gradient(rgba(48, 131, 73, 0.808), rgba(46, 48, 107, 0.3)), url('./music-melody-abstract_1575661251.jpg');
 }
 
 .area-login {
@@ -96,6 +96,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #c8f0e7;
 }
 
 .list-albums {
@@ -110,16 +111,12 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 300px;
-  width: 210px;
   margin: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px 5px;
   background-color: rgb(51, 51, 68);
 }
 
 .album-item img {
-  padding-left: 10px;
-  padding-right: 10px;
   border-radius: 20px;
 }
 
@@ -127,7 +124,7 @@ a:-webkit-any-link {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  color: #06A77D;
+  color: #c8f0e7;;
 }
 
 .header {
@@ -181,6 +178,48 @@ a:-webkit-any-link {
   color: #c8f0e7;
 }
 
+.page-album .main-album-page .container-photo-album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 210px;
+  margin: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px 5px;
+  
+}
+.album-item a {
+  transition: 0.5s;
+  background: linear-gradient(#2d2f41, #566359);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 210px;
+  margin: 20px;
+}
+
+.album-item a:hover {
+  height: 320px;
+  width: 224px;
+  transition: 0.5s;
+}
+
+.page-album .main-album-page .container-photo-album img {
+  flex-grow: 1;
+  margin-right: -10px;
+  margin-left: -10px;
+  margin-top:10px;
+  border-radius: 20px;
+} 
+
+.page-album .main-album-page .container-photo-album h2, h4 {
+  flex-grow: 0;
+} 
+
+
 .music-list {
   display: flex;
   flex-direction: column;
@@ -213,3 +252,58 @@ audio {
   flex-direction: column;
 }
 
+.container-profile, .page-profile-edit h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #c8f0e7;
+}
+
+.container-profile button, .form-profile button, .page-not-found button {
+  align-self: center;
+  height: 40px;
+  width: 150px;
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  border-radius: 10px;
+  background-color: #4eceb2;
+}
+
+.container-profile button:hover, .form-profile button:hover, .page-not-found button:hover {
+  background-color: #34947f;
+}
+
+.form-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+  color: #c8f0e7;
+  width: 20%;
+}
+
+.form-profile input, textarea {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+.form-profile textarea {
+  height: 50px;
+}
+
+.page-not-found h1, .page-not-found h2, .page-not-found h3 {
+  width: 50%;
+  text-align: center;
+  color :#c8f0e7;
+}
+
+.image-user {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50%;
+  margin-top: 40px;
+}

@@ -30,9 +30,9 @@ export default class Profile extends Component {
           loading
             ? <Loading />
             : (
-              <div>
+              <div className='container-profile'>
                 { image 
-                ? <img data-testid="profile-image" src='https://static.thenounproject.com/png/1380525-200.png'
+                ? <img className='image-user' data-testid="profile-image" src={image}
                 alt="Foto do usuário"
                 />
                 : <img data-testid="profile-image" src='https://static.thenounproject.com/png/1380525-200.png'

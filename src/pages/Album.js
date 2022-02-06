@@ -65,7 +65,7 @@ export default class Album extends Component {
             <section className='main-album-page'>
               <div className='container-photo-album'>
                 <img
-                  className="photoAlbum"s
+                  className="photoAlbum"
                   src={ artworkUrl100 }
                   alt={ artistName }
                 />

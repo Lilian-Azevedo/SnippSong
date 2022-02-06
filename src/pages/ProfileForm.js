@@ -6,10 +6,9 @@ export default class ProfileForm extends Component {
     const { name, image, email, description,
       isSaveButtonDisabled, onInputChange, onSaveButtonClick } = this.props;
     return (
-      <form className="formProfile">
-        <label htmlFor="image">
-          Imagem:
-          <input
+      <form className="form-profile">
+        <label className='non-showed' htmlFor="image">Imagem:</label>
+          <input className='non-showed'
             autoComplete='off'
             name="image"
             type="text"
@@ -18,9 +17,8 @@ export default class ProfileForm extends Component {
             value={ image }
             onChange={ onInputChange }
           />
-        </label>
-        <label htmlFor="name">
-          Nome:
+        
+        <label htmlFor="name">Nome:</label>
           <input
             autoComplete='off'
             name="name"
@@ -30,9 +28,8 @@ export default class ProfileForm extends Component {
             value={ name }
             onChange={ onInputChange }
           />
-        </label>
-        <label htmlFor="email">
-          Email:
+        
+        <label htmlFor="email">Email:</label>
           <input
             name="email"
             type="email"
@@ -41,11 +38,9 @@ export default class ProfileForm extends Component {
             value={ email }
             onChange={ onInputChange }
             autoComplete='off'
-          />
-        </label>
-   
-        <label htmlFor="description">
-          Descrição:
+          />  
+
+        <label htmlFor="description">Descrição:</label>
           <textarea
             name="description"
             data-testid="edit-input-description"
@@ -54,8 +49,7 @@ export default class ProfileForm extends Component {
             onChange={ onInputChange }
             autoComplete='off'
           />
-        </label>
-   
+
         <button
           name="isSaveButtonDisabled"
           data-testid="edit-button-save"
