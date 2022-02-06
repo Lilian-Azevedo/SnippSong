@@ -40,7 +40,7 @@ export default class Favorites extends Component {
   render() {
     const { musicsFavorites, loading } = this.state;
     return (
-      <div data-testid="page-favorites">
+      <div data-testid="page-favorites" className='page-favorites'>
         <Header />
         <h1>Favorites</h1>
         { loading

@@ -36,14 +36,13 @@ export default class Login extends Component {
     const { inputName, loading } = this.state;
 
     return (
-      <div data-testid="page-login">
-        <h1>Login</h1>
-        <hr />
+      <div data-testid="page-login" className="page-login">
         { loading
           ? <Loading />
           : (
-            <div>
-              <input
+            <div className="area-login">
+              <h1>Digite seu usuário</h1>
+              <input autoComplete="off"
                 type="text"
                 onChange={ this.handleInput }
                 value={ inputName }

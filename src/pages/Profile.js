@@ -24,7 +24,7 @@ export default class Profile extends Component {
   render() {
     const { userInfo: { name, email, description, image }, loading } = this.state;
     return (
-      <div data-testid="page-profile">
+      <div data-testid="page-profile" className='page-profile'>
         <Header />
         {
           loading

@@ -57,7 +57,7 @@ export default class Album extends Component {
       loading } = this.state;
     const { artistName, artworkUrl100, collectionName } = infoArtist;
     return (
-      <div data-testid="page-album">
+      <div data-testid="page-album" className='page-album'>
         <Header />
         { loading
           ? <Loading />

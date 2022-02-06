@@ -38,15 +38,15 @@ export default class Search extends Component {
     const { searchAlbum, albums } = this.state;
     if (!albums.length) return (<NotFound />);
     return (
-      <div>
+      <div className="container-albums">
         <h1>
           Resultado de álbuns de:
           {' '}
           {searchAlbum}
         </h1>
-        <div>
+        <div className='list-albums'>
           { albums.map((album) => (
-            <div key={ Math.random() }>
+            <div key={ Math.random() } className="album-item">
               <AlbumCard { ...album } />
             </div>))}
         </div>
@@ -58,15 +58,13 @@ export default class Search extends Component {
     const { inputName, loading, hasAlbums } = this.state;
 
     return (
-      <div data-testid="page-search">
-        <h1>Search</h1>
+      <div data-testid="page-search" className="page-search">
         <Header />
-        <hr />
         { loading
           ? <Loading />
           : (
-            <div>
-              <input
+            <div className="container-search">
+              <input autoComplete='off'
                 data-testid="search-artist-input"
                 type="text"
                 onChange={ this.handleInput }
@@ -84,7 +82,6 @@ export default class Search extends Component {
               </button>
             </div>)}
         { hasAlbums && this.albumsFounded()}
-
       </div>
     );
   }

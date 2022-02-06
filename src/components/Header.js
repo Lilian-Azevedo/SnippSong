@@ -23,25 +23,15 @@ export default class Header extends Component {
     const { user } = this.state;
 
     return (
-      <header data-testid="header-component">
+      <header data-testid="header-component" className='header'>
         <nav>
-          <ul>
-            <li><Link to="/search" data-testid="link-to-search">Pesquisar</Link></li>
-            <li>
-              <Link
-                to="/favorites"
-                data-testid="link-to-favorites"
-              >
-                Minhas músicas
-              </Link>
-            </li>
-            <li><Link to="/profile" data-testid="link-to-profile">Meu perfil</Link></li>
-          </ul>
+          <Link to="/search" data-testid="link-to-search">Pesquisar</Link>
+          <Link to="/favorites" data-testid="link-to-favorites">Minhas músicas</Link>
+          <Link to="/profile" data-testid="link-to-profile">Meu perfil</Link>
         </nav>
-
         {user === ''
           ? <Loading />
-          : (<h2 data-testid="header-user-name">{user.name}</h2>)}
+          : (<h2 data-testid="header-user-name">Boas-vindas, {user.name}!</h2>)}
       </header>);
   }
 }

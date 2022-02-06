@@ -15,17 +15,13 @@ export default class AlbumCard extends React.Component {
         data-testid={ `link-to-album-${collectionId}` }
         to={ `/album/${collectionId}` }
       >
-        <section className="card">
-          <div className="area-intern">
-            <img
-              className="photoAlbum"
-              src={ artworkUrl100 }
-              alt={ artistName }
-            />
-            <h2>{collectionName}</h2>
-            <h4>{artistName}</h4>
-          </div>
-        </section>
+        <img
+          className="photoAlbum"
+          src={ artworkUrl100 }
+          alt={ artistName }
+        />
+        <h2>{collectionName}</h2>
+        <h4>{artistName}</h4>
       </Link>
     );
   }
