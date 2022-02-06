@@ -62,7 +62,7 @@ export default class Album extends Component {
         { loading
           ? <Loading />
           : (
-            <section>
+            <section className='main-album-page'>
               <div className='container-photo-album'>
                 <img
                   className="photoAlbum"s

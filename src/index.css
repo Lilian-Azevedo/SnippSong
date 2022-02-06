@@ -172,25 +172,44 @@ a:-webkit-any-link {
   font-size: 30px;
 }
 
-.page-album section {
+.page-album .main-album-page {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 30px;
   width: 80%;
+  color: #c8f0e7;
 }
 
 .music-list {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
-.musicTrack {
+.music-track div{
+  display: flex;
   align-items: center;
-  margin-left: 60px;
 }
 
 audio {
   width: 240px;
+  margin-right: 10px;
 }
+
+.page-favorites section {
+  color: #c8f0e7;
+  text-align: center;
+}
+
+.page-favorites section .container-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.container-list .music-track :nth-child(2){
+  display:flex;
+  flex-direction: column;
+}
+

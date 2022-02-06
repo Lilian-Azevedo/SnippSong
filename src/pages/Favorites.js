@@ -42,20 +42,22 @@ export default class Favorites extends Component {
     return (
       <div data-testid="page-favorites" className='page-favorites'>
         <Header />
-        <h1>Favorites</h1>
-        { loading
-          ? <Loading />
-          : (
-            <div>
-              { musicsFavorites.map((music) => (
-                <div key={ Math.random() }>
-                  <MusicCard
-                    { ...music }
-                    onHandleFavorite={ this.inputFavorite }
-                    favorite={ this.isFavorite(music.trackId) }
-                  />
-                </div>))}
-            </div>)}
+        <section>
+          <h1>Favorites</h1>
+          { loading
+            ? <Loading />
+            : (
+              <div className='container-list'>
+                { musicsFavorites.map((music) => (
+                  <div key={ Math.random() }>
+                    <MusicCard
+                      { ...music }
+                      onHandleFavorite={ this.inputFavorite }
+                      favorite={ this.isFavorite(music.trackId) }
+                    />
+                  </div>))}
+              </div>)}
+        </section>
       </div>);
   }
 }

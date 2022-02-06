@@ -12,25 +12,27 @@ export default class MusicCard extends React.Component {
     } = this.props;
 
     return (
-      <section className="musicTrack">
+      <section className="music-track">
         <h3>{trackName}</h3>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          <code>audio</code>
-        </audio>
-        <label htmlFor={ trackId }>
-          {' '}
-          Favorita
-          <input
-            name="favorite"
-            checked={ favorite }
-            id={ trackId }
-            type="checkbox"
-            data-testid={ `checkbox-music-${trackId}` }
-            onChange={ onHandleFavorite }
-          />
-        </label>
+        <div>   
+          <audio data-testid="audio-component" src={ previewUrl } controls>
+            <track kind="captions" />
+            O seu navegador não suporta o elemento
+            <code>audio</code>
+          </audio>
+          <label htmlFor={ trackId }>
+            {' '}
+            Favorita
+            <input
+              name="favorite"
+              checked={ favorite }
+              id={ trackId }
+              type="checkbox"
+              data-testid={ `checkbox-music-${trackId}` }
+              onChange={ onHandleFavorite }
+              />
+          </label>
+        </div>
       </section>
 
     );
