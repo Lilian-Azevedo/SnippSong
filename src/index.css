@@ -272,6 +272,26 @@ audio {
   background-color: #34947f;
 }
 
+.container-profile div p{
+  align-self: center;
+}
+
+.container-profile div h4{
+  align-self: flex-start;
+}
+
+.container-profile div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50vh;
+  border-bottom: 1px solid #c8f0e7;
+}
+
+.container-profile a {
+  margin-top: 20px;
+}
+
 .form-profile {
   display: flex;
   flex-direction: column;
@@ -329,7 +349,7 @@ audio {
   align-items: center;
 }
 
-/* Usei a parte a seguir, para criar o coração no lugar do checkbox, do repositório do Pedro Guarize, link: https://github.com/guarize/music-app-react, contundo, não funcionou muito bem então preciso checar */
+/* Usei a parte a seguir, para criar o coração no lugar do checkbox, do repositório do Pedro Guarize, link: https://github.com/guarize/music-app-react, contudo, não funcionou muito bem então preciso checar */
 /* 
 input[ type = 'checkbox' ] {
   display: none;
