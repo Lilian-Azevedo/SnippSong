@@ -14,23 +14,23 @@ export default class MusicCard extends React.Component {
     return (
       <section className="music-track">
         <h3>{trackName}</h3>
-        <div>   
+        <div>
           <audio data-testid="audio-component" src={ previewUrl } controls>
             <track kind="captions" />
             O seu navegador não suporta o elemento
             <code>audio</code>
           </audio>
-          <label htmlFor={ trackId }>
+          <input
+            name="favorite"
+            checked={ favorite }
+            id={ trackId }
+            type="checkbox"
+            data-testid={ `checkbox-music-${trackId}` }
+            onChange={ onHandleFavorite }
+          />
+          <label className="heart" htmlFor={ trackId }>
             {' '}
             Favorita
-            <input
-              name="favorite"
-              checked={ favorite }
-              id={ trackId }
-              type="checkbox"
-              data-testid={ `checkbox-music-${trackId}` }
-              onChange={ onHandleFavorite }
-              />
           </label>
         </div>
       </section>

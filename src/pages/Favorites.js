@@ -40,14 +40,14 @@ export default class Favorites extends Component {
   render() {
     const { musicsFavorites, loading } = this.state;
     return (
-      <div data-testid="page-favorites" className='page-favorites'>
+      <div data-testid="page-favorites" className="page-favorites">
         <Header />
         <section>
           <h1>Favorites</h1>
           { loading
             ? <Loading />
             : (
-              <div className='container-list'>
+              <div className="container-list">
                 { musicsFavorites.map((music) => (
                   <div key={ Math.random() }>
                     <MusicCard

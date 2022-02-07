@@ -24,21 +24,14 @@ export default class Profile extends Component {
   render() {
     const { userInfo: { name, email, description, image }, loading } = this.state;
     return (
-      <div data-testid="page-profile" className='page-profile'>
+      <div data-testid="page-profile">
         <Header />
         {
           loading
             ? <Loading />
             : (
-              <div className='container-profile'>
-                { image 
-                ? <img className='image-user' data-testid="profile-image" src={image}
-                alt="Foto do usuário"
-                />
-                : <img data-testid="profile-image" src='https://static.thenounproject.com/png/1380525-200.png'
-                  alt="Foto do usuário"
-                  />
-              }
+              <div>
+                <img data-testid="profile-image" src={ image } alt="Foto do usuário" />
                 <h3>{name}</h3>
                 <h4>{email}</h4>
                 <p>{description}</p>

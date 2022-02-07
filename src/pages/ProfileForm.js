@@ -7,48 +7,49 @@ export default class ProfileForm extends Component {
       isSaveButtonDisabled, onInputChange, onSaveButtonClick } = this.props;
     return (
       <form className="form-profile">
-        <label className='non-showed' htmlFor="image">Imagem:</label>
-          <input className='non-showed'
-            autoComplete='off'
-            name="image"
-            type="text"
-            data-testid="edit-input-image"
-            id="image"
-            value={ image }
-            onChange={ onInputChange }
-          />
-        
-        <label htmlFor="name">Nome:</label>
-          <input
-            autoComplete='off'
-            name="name"
-            type="text"
-            data-testid="edit-input-name"
-            id="name"
-            value={ name }
-            onChange={ onInputChange }
-          />
-        
-        <label htmlFor="email">Email:</label>
-          <input
-            name="email"
-            type="email"
-            data-testid="edit-input-email"
-            id="email"
-            value={ email }
-            onChange={ onInputChange }
-            autoComplete='off'
-          />  
+        <h4>Imagem:</h4>
+        <input
+          className="non-showed"
+          autoComplete="off"
+          name="image"
+          type="text"
+          data-testid="edit-input-image"
+          id="image"
+          value={ image }
+          onChange={ onInputChange }
+        />
 
-        <label htmlFor="description">Descrição:</label>
-          <textarea
-            name="description"
-            data-testid="edit-input-description"
-            id="description"
-            value={ description }
-            onChange={ onInputChange }
-            autoComplete='off'
-          />
+        <h4>Nome:</h4>
+        <input
+          autoComplete="off"
+          name="name"
+          type="text"
+          data-testid="edit-input-name"
+          id="name"
+          value={ name }
+          onChange={ onInputChange }
+        />
+
+        <h4>Email:</h4>
+        <input
+          name="email"
+          type="email"
+          data-testid="edit-input-email"
+          id="email"
+          value={ email }
+          onChange={ onInputChange }
+          autoComplete="off"
+        />
+
+        <h4>Descrição:</h4>
+        <textarea
+          name="description"
+          data-testid="edit-input-description"
+          id="description"
+          value={ description }
+          onChange={ onInputChange }
+          autoComplete="off"
+        />
 
         <button
           name="isSaveButtonDisabled"

@@ -52,7 +52,7 @@ export default class ProfileEdit extends Component {
     const { loading, userInfo, disabled, redirect } = this.state;
     if (redirect) return (<Redirect to="/profile" />);
     return (
-      <div data-testid="page-profile-edit" className='page-profile-edit'>
+      <div data-testid="page-profile-edit" className="page-profile-edit">
         <Header />
         <h1>Profile Edit</h1>
         {

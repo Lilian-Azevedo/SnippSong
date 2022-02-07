@@ -31,6 +31,11 @@ export default class Login extends Component {
     history.push('/search');
   }
 
+  handleEnterClick = (event) => {
+    const { inputName } = this.state;
+    if (event.key === 'Enter') return this.handleClick(inputName);
+  }
+
   render() {
     const MIN_LETTERS = 3;
     const { inputName, loading } = this.state;
@@ -41,13 +46,16 @@ export default class Login extends Component {
           ? <Loading />
           : (
             <div className="area-login">
-              <h1>Digite seu usuário</h1>
-              <input autoComplete="off"
+              <h1>SnippSong</h1>
+              <input
+                autoComplete="off"
                 type="text"
                 onChange={ this.handleInput }
+                onKeyDown={ this.handleEnterClick }
                 value={ inputName }
                 name="inputName"
                 data-testid="login-name-input"
+                placeholder="Digite seu usuário"
               />
               <button
                 type="button"

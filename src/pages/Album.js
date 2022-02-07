@@ -57,13 +57,13 @@ export default class Album extends Component {
       loading } = this.state;
     const { artistName, artworkUrl100, collectionName } = infoArtist;
     return (
-      <div data-testid="page-album" className='page-album'>
+      <div data-testid="page-album" className="page-album">
         <Header />
         { loading
           ? <Loading />
           : (
-            <section className='main-album-page'>
-              <div className='container-photo-album'>
+            <section className="main-album-page">
+              <div className="container-photo-album">
                 <img
                   className="photoAlbum"
                   src={ artworkUrl100 }
@@ -72,7 +72,7 @@ export default class Album extends Component {
                 <h2 data-testid="album-name">{collectionName}</h2>
                 <h4 data-testid="artist-name">{artistName}</h4>
               </div>
-              <div className='music-list'>
+              <div className="music-list">
                 { musics.map((music) => music.trackId
               && (
                 <div key={ Math.random() } id={ music.trackId }>

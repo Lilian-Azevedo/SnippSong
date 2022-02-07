@@ -36,7 +36,9 @@ export default class Search extends Component {
 
   handleEnterClick = (event) => {
     const { inputName } = this.state;
-    event.key === 'Enter' && this.handleClick(inputName);
+    if (event.key === 'Enter') {
+      return this.handleClick(inputName);
+    }
   }
 
   albumsFounded = () => {
@@ -49,7 +51,7 @@ export default class Search extends Component {
           {' '}
           {searchAlbum}
         </h1>
-        <div className='list-albums'>
+        <div className="list-albums">
           { albums.map((album) => (
             <div key={ Math.random() } className="album-item">
               <AlbumCard { ...album } />
@@ -69,7 +71,8 @@ export default class Search extends Component {
           ? <Loading />
           : (
             <div className="container-search">
-              <input autoComplete='off'
+              <input
+                autoComplete="off"
                 data-testid="search-artist-input"
                 type="text"
                 placeholder="Nome do artista"
