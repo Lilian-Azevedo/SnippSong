@@ -80,6 +80,7 @@ export default class Search extends Component {
                 name="inputName"
                 onChange={ this.handleInput }
                 onKeyDown={ this.handleEnterClick }
+                spellCheck="false"
               />
               <button
                 type="button"

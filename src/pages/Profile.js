@@ -53,12 +53,12 @@ export default class Profile extends Component {
 
                 <div>
                   <h4>Email</h4>
-                  <p>{ email }</p>
+                  <span>{ email }</span>
                 </div>
 
                 <div>
                   <h4>Descrição</h4>
-                  <p>{description}</p>
+                  <span>{description}</span>
                 </div>
 
                 <Link to="/profile/edit">
