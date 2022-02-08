@@ -349,22 +349,38 @@ audio {
   align-items: center;
 }
 
-/* Usei a parte a seguir, para criar o coração no lugar do checkbox, do repositório do Pedro Guarize, link: https://github.com/guarize/music-app-react, contudo, não funcionou muito bem então preciso checar */
-/* 
+/* Usei a parte a seguir, para recriar o coração no lugar do checkbox, do repositório do Pedro Guarize, link: https://github.com/guarize/music-app-react, mas tive que fazer algumas alterações com a ajuda do Guthias para funcionar */
+
+
 input[ type = 'checkbox' ] {
-  display: none;
-} */
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+} 
 
+.heart-label {
+  display: block; 
+  position: relative; 
+  padding-left: 35px; 
+  margin-bottom: 12px; 
+  cursor: pointer; 
+  font-size: 22px; 
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+}
 
-input[ type = 'checkbox' ] + label {
+input[ type = 'checkbox' ] + .heart {
   display: inline-block;
   font-size: 26px;
   padding-left: 35px;
   position: relative;
-  cursor: pointer;
 }
 
-input[ type = 'checkbox' ] + label:before {
+input[ type = 'checkbox' ] + .heart:before {
   border: 1px solid transparent;
   border-radius: 3px;
   content: '\2764';
@@ -376,12 +392,12 @@ input[ type = 'checkbox' ] + label:before {
   transition: 0.5s ease;
 }
 
-input[ type = 'checkbox' ]:checked + label:before {
+input[ type = 'checkbox' ]:checked + .heart:before {
   background-color: transparent;
   border: 1px solid transparent;
 }
 
-input[ type = 'checkbox' ]:checked + label:after {
+input[ type = 'checkbox' ]:checked + .heart:after {
   color: #036b52;
   content: '\2764';
   font-size: 26px;
@@ -390,4 +406,64 @@ input[ type = 'checkbox' ]:checked + label:after {
   top: -15px;
   transition: 0.5s ease;
   text-shadow: -1px -1px 12px rgba(3, 107, 82, 1);
+}
+
+/* Usei a parte abaixo para fazer as barras de carregando com base no respositório do Guthias, link: https://github.com/tryber/sd-018-b-project-trybetunes/pull/20/files */
+@keyframes expand {
+
+  0% {
+    height: 20px;
+  }
+
+  50% {
+    height: 70px;
+  }
+
+  100% {
+    height: 20px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  user-select: none;
+  background-image: linear-gradient(90deg, #06A77D, #0B5351, #1A2B38, #231937, #2C0735);
+  color: white;
+  display: flex;
+  gap: 10px;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-text {
+  display: none;
+}
+
+.container-loading .line {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  animation: expand infinite 1s;
+}
+
+.container-loading .line:nth-child( 1 ) {
+  animation-delay: 0.1s;
+}
+
+.container-loading .line:nth-child( 2 ) {
+  animation-delay: 0.2s;
+}
+
+.container-loadin .line:nth-child( 3 ) {
+  animation-delay: 0.3s;
 }

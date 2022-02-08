@@ -30,9 +30,9 @@ export default class Header extends Component {
             <div className="container-header-user">
               <div className="logo" />
               <h2 data-testid="header-user-name">
-                Boas-vindas,
+                {/* Boas-vindas, */}
                 {user.name}
-                !
+                {/*       ! */}
               </h2>
               <Link to="/">
                 <button type="button">Trocar usuário</button>

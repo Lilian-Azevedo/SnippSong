@@ -13,6 +13,7 @@ export default class Profile extends Component {
 
   getProfileData = async () => {
     const response = await getUser();
+    console.log(response);
     if (response) {
       this.setState({
         userInfo: response,
@@ -47,7 +48,7 @@ export default class Profile extends Component {
                     />)}
                 <div>
                   <h4>Nome</h4>
-                  <p>{name}</p>
+                  <span>{name}</span>
                 </div>
 
                 <div>

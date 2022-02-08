@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, func, bool } from 'prop-types';
+import { string, func, bool, number } from 'prop-types';
 
 export default class MusicCard extends React.Component {
   render() {
@@ -20,17 +20,18 @@ export default class MusicCard extends React.Component {
             O seu navegador não suporta o elemento
             <code>audio</code>
           </audio>
-          <input
-            name="favorite"
-            checked={ favorite }
-            id={ trackId }
-            type="checkbox"
-            data-testid={ `checkbox-music-${trackId}` }
-            onChange={ onHandleFavorite }
-          />
-          <label className="heart" htmlFor={ trackId }>
+          <label className="heart-label" htmlFor={ trackId }>
+            <input
+              name="favorite"
+              checked={ favorite }
+              id={ trackId }
+              type="checkbox"
+              data-testid={ `checkbox-music-${trackId}` }
+              onChange={ onHandleFavorite }
+            />
             {' '}
             Favorita
+            <div className="heart" />
           </label>
         </div>
       </section>
@@ -43,6 +44,6 @@ MusicCard.propTypes = {
   trackName: string.isRequired,
   previewUrl: string.isRequired,
   favorite: bool.isRequired,
-  trackId: string.isRequired,
+  trackId: number.isRequired,
   onHandleFavorite: func.isRequired,
 };

@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Loading from './Loading';
 import { getUser } from '../services/userAPI';
 
-export default class Profile extends Component {
+export default class Profile1 extends Component {
   state = { loading: true, userInfo: '' }
 
   componentDidMount() {

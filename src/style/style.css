@@ -1,0 +1,346 @@
+/* .loading {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .page-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-image: linear-gradient(rgba(48, 131, 73, 0.808), rgba(46, 48, 107, 0.3)), url('./music-melody-abstract_1575661251.jpg');
+  }
+  
+  .area-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    box-shadow: 0 0.5em 2em rgb(224, 205, 205);
+    padding: 20px 20px 20px 20px;
+    border-radius: 3%;
+  }
+  
+  .area-login input {
+    border-radius: 8px;
+    height: 45px;
+    width: 300px;
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin: 2rem 0 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .area-login button {
+    height: 45px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .container-loading h2 {
+    font-size: 30px;
+    color: #ffffff;
+  }
+  
+  .page-search, .page-album, .page-profile, .page-favorites, .page-not-found, .page-profile-edit  {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    background-image: linear-gradient(90deg, #06A77D, #0B5351, #1A2B38, #231937, #2C0735);
+    min-height: 100vh;
+  }
+  
+  .container-search {
+    margin: 2rem 0 1.5rem;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .container-search input{
+    border-radius: 6px;
+    align-self: center;
+    height: 30px;
+    width: 300px;
+    margin-right: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .container-search button {
+    align-self: center;
+    height: 30px;
+    width: 100px;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .container-albums {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #c8f0e7;
+  }
+  
+  .list-albums {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+  }
+  
+  .album-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px 5px;
+    background-color: rgb(51, 51, 68);
+  }
+  
+  .album-item img {
+    border-radius: 20px;
+  }
+  
+  a:-webkit-any-link {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #c8f0e7;;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #041b17a2;
+  }
+  
+  .header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0 0.5em 1em black;
+    background-color: #025747;
+    border-bottom-right-radius: 2em;
+    border-top-left-radius: 2em;
+  }
+  
+  .header nav a {
+    font-weight: 500;
+    text-align: center;
+    border: 1px groove #047053;
+    border-radius: 2em 0;
+    padding: 10px;
+    align-self: center;
+    width: 33.3%;
+    color: #09cc9f;
+    transition: 0.5s;
+  }
+  
+  .header nav a:hover {
+    width: 40%;
+    transition: 0.5s;
+  }
+  
+  .header h2 {
+    color:#ffffff;
+    font-size: 30px;
+  }
+  
+  .page-album .main-album-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+    width: 80%;
+    color: #c8f0e7;
+  }
+  
+  .page-album .main-album-page .container-photo-album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 210px;
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px 5px;
+    
+  }
+  .album-item a {
+    transition: 0.5s;
+    background: linear-gradient(#2d2f41, #566359);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 210px;
+    margin: 20px;
+  }
+  
+  .album-item a:hover {
+    height: 320px;
+    width: 224px;
+    transition: 0.5s;
+  }
+  
+  .page-album .main-album-page .container-photo-album img {
+    flex-grow: 1;
+    margin-right: -10px;
+    margin-left: -10px;
+    margin-top:10px;
+    border-radius: 20px;
+  } 
+  
+  .page-album .main-album-page .container-photo-album h2, h4 {
+    flex-grow: 0;
+  } 
+  
+  
+  .music-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .music-track div{
+    display: flex;
+    align-items: center;
+  }
+  
+  audio {
+    width: 240px;
+    margin-right: 10px;
+  }
+  
+  .page-favorites section {
+    color: #c8f0e7;
+  }
+  
+  .page-favorites section .container-list {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .page-favorites section h1 {
+    text-align: center;
+  }
+  
+  .container-profile, .page-profile-edit h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #c8f0e7;
+  }
+  
+  .container-profile button, .form-profile button, .page-not-found button, .container-header-user button {
+    align-self: center;
+    height: 40px;
+    width: 150px;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 10px;
+    background-color: #4eceb2;
+  }
+  
+  .container-profile button:hover, .form-profile button:hover, .page-not-found button:hover, .container-header-user button:hover {
+    background-color: #34947f;
+  }
+  
+  .container-profile div p{
+    align-self: center;
+  }
+  
+  .container-profile div h4{
+    align-self: flex-start;
+  }
+  
+  .container-profile div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50vh;
+    border-bottom: 1px solid #c8f0e7;
+  }
+  
+  .container-profile a {
+    margin-top: 20px;
+  }
+  
+  .form-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
+    color: #c8f0e7;
+    width: 20%;
+  }
+  
+  .form-profile input, textarea {
+    margin-bottom: 20px;
+    margin-top: -5px;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 20px;
+    font-family: cursive;
+  }
+  
+  .form-profile textarea {
+    height: 50px;
+  }
+  
+  .page-not-found h1, .page-not-found h2, .page-not-found h3 {
+    width: 50%;
+    text-align: center;
+    color :#c8f0e7;
+  }
+  
+  .image-user {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    margin-top: 40px;
+  }
+  
+  .logo {
+    max-width: 100px;
+    max-height: 100px;
+    flex-grow: 1;
+  }
+  
+  .container-header-user a{
+    flex-grow: 1;
+  }
+  
+  .container-header-user h2 {
+    flex-grow: 2;
+  }
+  
+  .container-header-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+  }
+  
+  /* Usei a parte a seguir, para criar o coração no lugar do checkbox, do repositório do Pedro Guarize, link: https://github.com/guarize/music-app-react, contudo, não funcionou muito bem então preciso checar */
+  
+  
+  /* input[ type = 'checkbox' ] {
+    display: none;
+  }  */
+  
+  
+  /* 
