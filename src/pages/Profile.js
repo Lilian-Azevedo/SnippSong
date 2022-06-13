@@ -13,7 +13,6 @@ export default class Profile extends Component {
 
   getProfileData = async () => {
     const response = await getUser();
-    console.log(response);
     if (response) {
       this.setState({
         userInfo: response,

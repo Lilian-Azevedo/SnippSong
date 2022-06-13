@@ -29,8 +29,8 @@ export default class MusicCard extends React.Component {
               data-testid={ `checkbox-music-${trackId}` }
               onChange={ onHandleFavorite }
             />
-            {' '}
-            Favorita
+         {/*    {' '}
+            Favorita */}
             <div className="heart" />
           </label>
         </div>
